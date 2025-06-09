@@ -43,7 +43,7 @@ $$\textrm{AdaIN}(x,y)=\sigma (y)(\frac{x-\mu(x)}{\sigma(x)})+\mu(y)$$
 <br />스타일 이미지로는 [WikiArt - 전체 작가별 무작위 이미지 1~2개](https://www.kaggle.com/datasets/steubk/wikiart), 총 1,119개 이미지
 <br />
 <br />이 때 설정한 하이퍼 파라미터는 다음과 같다. :
-<br />`--epoch 50`, `--batch 8`, `--num_workers 4`, `--device GPU(RTX 3080)`
+<br />`--epoch 50`, `--batch 8`, `--num_workers 4`, `--device GPU(RTX 3080)`, `--learning_rate 1e-4`, `--content_weight 1.0`, `--style_weight 10.0`
 <br />이를 기반으로 약 8시간 가량 학습시켰다.
 <br />
 <br />
