@@ -5,7 +5,7 @@ AdaIN은 Style Transfer의 일종으로 콘텐츠 이미지를 스타일 이미�
 <br />AdaIN은 기본적으로 Encoder, AdaIN Layer, Decoder로 구성되어 있다.
 
 ![structure](https://github.com/user-attachments/assets/bfcf1400-d075-4d32-956c-9806cfb19877)
-
+dasdasd
 
 $$\textrm{AdaIN}(x,y)=\sigma (y)(\frac{x-\mu(x)}{\sigma(x)})+\mu(y)$$
 
