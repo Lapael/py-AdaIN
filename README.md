@@ -53,7 +53,10 @@ $$\textrm{AdaIN}(x,y)=\sigma (y)(\frac{x-\mu(x)}{\sigma(x)})+\mu(y)$$
 ![dog](https://github.com/user-attachments/assets/ab1df342-d78e-47d8-b15b-4926f84dd29c) ![gogh](https://github.com/user-attachments/assets/290b1fa6-39b8-4da7-91e1-f593ced96d59)
 콘텐츠 이미지
 
-
+<div style="display: flex;">
+  <img src="https://github.com/user-attachments/assets/ab1df342-d78e-47d8-b15b-4926f84dd29c" width="49%" />
+  <img src="https://github.com/user-attachments/assets/290b1fa6-39b8-4da7-91e1-f593ced96d59" width="49%" />
+</div>
 
 스타일 이미지
 
