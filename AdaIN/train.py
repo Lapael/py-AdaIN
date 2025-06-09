@@ -44,7 +44,7 @@ class StyleTransferDataset(Dataset):
         return content_img, style_img
 
 
-# VGG Encoder 정의 (ReLU4_1까지)
+# VGG Encoder 정의 (ReLU4_1까지) - ReLU, Conv는 hidden layer 종류 이름
 class VGGEncoder(nn.Module):
     def __init__(self):
         super(VGGEncoder, self).__init__()
