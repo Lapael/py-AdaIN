@@ -3,6 +3,7 @@ AdaIN은 Style Transfer의 일종으로 콘텐츠 이미지를 스타일 이미�
 (Arbitrary Style Transfer in Real-time with Adaptive Instance Normalization)
 
 $$\textrm{AdaIN}(x,y)=\sigma (y)(\frac{x-\mu(x)}{\sigma(x)})+\mu(y)$$
+여기서 $x$는 콘텐츠 특징, $y$는 스타일 특징으로, 콘텐츠 특징의 평균과 분산을 스타일 특징의 평균과 분산으로 조정한다.
 
 
 
