@@ -40,7 +40,7 @@ $$\textrm{AdaIN}(x,y)=\sigma (y)(\frac{x-\mu(x)}{\sigma(x)})+\mu(y)$$
 <br />이는 내가 직접 local에서 Decoder을 학습시킨 결과이다.
 <br />이를 위해 사용한 데이터셋은
 <br />콘텐츠 이미지로는 [COCO Datasets - 2017 Unlabeled images](https://cocodataset.org/#download) 내 무작위 10,000개 이미지
-<br />스타일 이미지로는 WikiArt - 전체 작가별 무작위 이미지 1~2개, 총 1,119개 이미지
+<br />스타일 이미지로는 [WikiArt - 전체 작가별 무작위 이미지 1~2개](https://www.kaggle.com/datasets/steubk/wikiart), 총 1,119개 이미지
 <br />
 <br />이 때 설정한 하이퍼 파라미터는 다음과 같다. :
 <br />`--epoch 50`, `--batch 8`, `--num_workers 4`, `--device GPU(RTX 3080)`
@@ -88,7 +88,7 @@ $$\textrm{AdaIN}(x,y)=\sigma (y)(\frac{x-\mu(x)}{\sigma(x)})+\mu(y)$$
 <br />
 <br />
 <br />
-
 [Model Download(35.7MB)](https://drive.google.com/file/d/1TAk9eLtbAq0AFuak8GuTQfJa6zWB81Ib/view?usp=sharing)
+
 
 
