@@ -38,6 +38,7 @@ $$\textrm{AdaIN}(x,y)=\sigma (y)(\frac{x-\mu(x)}{\sigma(x)})+\mu(y)$$
 ![training_loss](https://github.com/user-attachments/assets/f314c78c-47aa-4d4a-a396-04b95e4c83fa)
 
 <br />이는 내가 직접 local에서 Decoder을 학습시킨 결과이다.
+<br />이를 위해
 <br />이 때 설정한 파라미터는 다음과 같다. :
-<br />`--epoch 50`
+<br />`--epoch 50`, `--batch 8`
 https://drive.google.com/file/d/1TAk9eLtbAq0AFuak8GuTQfJa6zWB81Ib/view?usp=sharing
