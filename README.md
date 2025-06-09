@@ -22,7 +22,7 @@ AdaIN은 Style Transfer의 일종으로 콘텐츠 이미지를 스타일 이미�
 $$\textrm{AdaIN}(x,y)=\sigma (y)(\frac{x-\mu(x)}{\sigma(x)})+\mu(y)$$
 
 이는 AdaIN Layer의 핵심 수식으로 $x$는 콘텐츠 특징, $y$는 스타일 특징을 뜻한다.
-<br />출력값은 콘텐츠 특징의 평균$\mu$과 분산$\sigma ^2$을 스타일 특징의 평균과 분산으로 조정한다.
+<br />출력값은 콘텐츠 특징의 평균($\mu$)과 분산($\sigma ^2$)을 스타일 특징의 평균과 분산으로 조정한다.
 
 
 https://drive.google.com/file/d/1TAk9eLtbAq0AFuak8GuTQfJa6zWB81Ib/view?usp=sharing
