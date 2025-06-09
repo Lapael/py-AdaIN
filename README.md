@@ -50,11 +50,11 @@ $$\textrm{AdaIN}(x,y)=\sigma (y)(\frac{x-\mu(x)}{\sigma(x)})+\mu(y)$$
 <br />
 <br />이렇게 학습시킨 모델을 활용한 결과로
 
-![dog](https://github.com/user-attachments/assets/ab1df342-d78e-47d8-b15b-4926f84dd29c)
+![dog](https://github.com/user-attachments/assets/ab1df342-d78e-47d8-b15b-4926f84dd29c) ![gogh](https://github.com/user-attachments/assets/290b1fa6-39b8-4da7-91e1-f593ced96d59)
 콘텐츠 이미지
 
 
-![gogh](https://github.com/user-attachments/assets/290b1fa6-39b8-4da7-91e1-f593ced96d59)
+
 스타일 이미지
 
 
