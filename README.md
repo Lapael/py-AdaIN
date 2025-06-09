@@ -1,5 +1,7 @@
 # py-AdaIN
-AdaIN은 Style Transfer의 일종으로 콘텐츠 이미지를 스타일 이미지의 스타일로 재구성하는 기술이다.
+사용 방법 : Input 파일에 콘텐츠 / 스타일 이미지 넣은 뒤 app.py 실행
+<br />
+<br />AdaIN은 Style Transfer의 일종으로 콘텐츠 이미지를 스타일 이미지의 스타일로 재구성하는 기술이다.
 <br />(Arbitrary Style Transfer in Real-time with Adaptive Instance Normalization)
 <br />
 <br />AdaIN은 기본적으로 Encoder, AdaIN Layer, Decoder로 구성되어 있다.
