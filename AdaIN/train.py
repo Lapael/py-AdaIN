@@ -105,7 +105,7 @@ class Decoder(nn.Module):
             nn.Conv2d(64, 64, kernel_size=3, padding=1),
             nn.ReLU(),
 
-            # 최종 출력 레이어
+            # 최종
             nn.Conv2d(64, 3, kernel_size=3, padding=1),
         )
 
@@ -114,7 +114,7 @@ class Decoder(nn.Module):
 
 
 # AdaIN 함수
-def calc_mean_std(feat, eps=1e-5):
+def calc_mean_std(feat, eps=1e-5): # eps는 0으로 나누기 방지용
     size = feat.size()
     assert len(size) == 4
     N, C = size[:2]
@@ -133,11 +133,11 @@ def adaptive_instance_normalization(content_feat, style_feat):
     return normalized_feat * style_std.expand(size) + style_mean.expand(size)
 
 
-# 손실 함수들
+# 콘텐츠 손실
 def content_loss(generated_features, target_features):
     return F.mse_loss(generated_features, target_features)
 
-
+# 스타일 손실
 def style_loss(generated_features, style_features):
     generated_mean, generated_std = calc_mean_std(generated_features)
     style_mean, style_std = calc_mean_std(style_features)
@@ -157,8 +157,7 @@ def train_model():
     transform = transforms.Compose([
         transforms.Resize((256, 256)),
         transforms.ToTensor(),
-        transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                             std=[0.229, 0.224, 0.225])
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
 
     # 데이터셋 및 데이터로더
@@ -168,9 +167,9 @@ def train_model():
         transform=transform
     )
 
-    dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=4)
+    dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=4) # 다중시행
 
-    # 모델 초기화
+    # 초기화
     encoder = VGGEncoder().to(device)
     decoder = Decoder().to(device)
 
@@ -178,14 +177,14 @@ def train_model():
     optimizer = optim.Adam(decoder.parameters(), lr=learning_rate)
 
     # 학습 루프
-    encoder.eval()
+    encoder.eval() # encoder은 학습 안해도 됨
     decoder.train()
 
     losses = []
 
     for epoch in range(num_epochs):
         epoch_loss = 0.0
-        progress_bar = tqdm(dataloader, desc=f'Epoch {epoch + 1}/{num_epochs}')
+        progress_bar = tqdm(dataloader, desc=f'Epoch {epoch + 1}/{num_epochs}') # 진행도 출력
 
         for batch_idx, (content_imgs, style_imgs) in enumerate(progress_bar):
             content_imgs = content_imgs.to(device)
@@ -230,7 +229,7 @@ def train_model():
 
         print(f'Epoch [{epoch + 1}/{num_epochs}], Average Loss: {avg_loss:.4f}')
 
-        # 체크포인트 저장 (매 10 에포크마다)
+        # 체크포인트 저장 epoch 10마다
         if (epoch + 1) % 10 == 0:
             torch.save({
                 'epoch': epoch + 1,
@@ -238,7 +237,7 @@ def train_model():
                 'optimizer_state_dict': optimizer.state_dict(),
                 'loss': avg_loss,
             }, f'model_save/checkpoint_epoch_{epoch + 1}.pth')
-            print(f'Checkpoint saved at epoch {epoch + 1}')
+            print(f'Checkpoint saved epoch {epoch + 1}')
 
     # 최종 모델 저장
     torch.save({
@@ -247,7 +246,7 @@ def train_model():
         'losses': losses
     }, 'model_save/adain_model.pth')
 
-    print('Training completed! Model saved as model_save/adain_model.pth')
+    print('학습 종료 model_save/adain_model.pth')
 
     # 손실 그래프 저장
     plt.figure(figsize=(10, 6))
@@ -261,11 +260,9 @@ def train_model():
 
 
 if __name__ == '__main__':
-    print("Starting AdaIN Neural Style Transfer Training...")
     print(f"Using device: {device}")
     print(f"CUDA Available: {torch.cuda.is_available()}")
     if torch.cuda.is_available():
         print(f"GPU: {torch.cuda.get_device_name(0)}")
         print(f"Memory: {torch.cuda.get_device_properties(0).total_memory / 1024 ** 3:.1f} GB")
-
     train_model()
