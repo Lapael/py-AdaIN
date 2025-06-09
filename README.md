@@ -5,7 +5,10 @@ AdaIN은 Style Transfer의 일종으로 콘텐츠 이미지를 스타일 이미�
 <br />AdaIN은 기본적으로 Encoder, AdaIN Layer, Decoder로 구성되어 있다.
 
 ![structure](https://github.com/user-attachments/assets/bfcf1400-d075-4d32-956c-9806cfb19877)
-dasdasd
+
+<br />그림에서 왼쪽 위의 이미지를 콘텐츠 이미지, 왼쪽 아래의 이미지를 스타일 이미지라고 한다.
+<br />콘텐츠 이미지는 스타일을 입힐 대상이고 스타일 이미지는 스타일을 추출할 대상이다.
+<br />즉, 콘텐츠 이미지를 강아지 사진으로 하고 스타일 이미지를 반 고흐의 그림으로 한다면, 반 고흐의 화풍으로 그려진 강아지 사진이 결과물이 된다.
 
 $$\textrm{AdaIN}(x,y)=\sigma (y)(\frac{x-\mu(x)}{\sigma(x)})+\mu(y)$$
 
