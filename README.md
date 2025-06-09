@@ -38,7 +38,24 @@ $$\textrm{AdaIN}(x,y)=\sigma (y)(\frac{x-\mu(x)}{\sigma(x)})+\mu(y)$$
 ![training_loss](https://github.com/user-attachments/assets/f314c78c-47aa-4d4a-a396-04b95e4c83fa)
 
 <br />이는 내가 직접 local에서 Decoder을 학습시킨 결과이다.
-<br />이를 위해
-<br />이 때 설정한 파라미터는 다음과 같다. :
-<br />`--epoch 50`, `--batch 8`
+<br />이를 위해 사용한 데이터셋은
+<br />콘텐츠 이미지로는 COCO Datasets - 2017 Unlabeled images(https://cocodataset.org/#download) 내 무작위 10,000개 이미지
+<br />스타일 이미지로는 WikiArt - 전체 작가별 무작위 이미지 1~2개, 총 1,119개 이미지
+<br />
+<br />이 때 설정한 하이퍼 파라미터는 다음과 같다. :
+<br />`--epoch 50`, `--batch 8`, `--num_workers 4`, `--device GPU(RTX 3080)`
+<br />이를 기반으로 약 8시간 가량 학습시켰다.
+<br />
+<br />
+<br />
+<br />이렇게 학습시킨 모델을 활용한 결과로
+
+![dog](https://github.com/user-attachments/assets/ab1df342-d78e-47d8-b15b-4926f84dd29c)
+콘텐츠 이미지
+
+
+![gogh](https://github.com/user-attachments/assets/290b1fa6-39b8-4da7-91e1-f593ced96d59)
+스타일 이미지
+
+
 https://drive.google.com/file/d/1TAk9eLtbAq0AFuak8GuTQfJa6zWB81Ib/view?usp=sharing
