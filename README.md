@@ -82,5 +82,12 @@ $$\textrm{AdaIN}(x,y)=\sigma (y)(\frac{x-\mu(x)}{\sigma(x)})+\mu(y)$$
 </tr>
 </table>
 
+<br />
+<br />이렇게 반 고흐의 별이 빛나는 밤의 화풍을 살린 강아지 사진을 만들 수 있다.
+<br />
+<br />
+<br />
+<br />Model DownLoad(https://drive.google.com/file/d/1TAk9eLtbAq0AFuak8GuTQfJa6zWB81Ib/view?usp=sharing)
 
-https://drive.google.com/file/d/1TAk9eLtbAq0AFuak8GuTQfJa6zWB81Ib/view?usp=sharing
+
+
