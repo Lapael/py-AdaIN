@@ -69,5 +69,18 @@ $$\textrm{AdaIN}(x,y)=\sigma (y)(\frac{x-\mu(x)}{\sigma(x)})+\mu(y)$$
 </tr>
 </table>
 
+<table>
+<tr>
+<td width="50%" align="center">
+
+![dog_stylized_by_gogh_alpha1 0](https://github.com/user-attachments/assets/5e32722b-b2f9-4598-8073-33a221242983)
+
+
+결과
+
+</td>
+</tr>
+</table>
+
 
 https://drive.google.com/file/d/1TAk9eLtbAq0AFuak8GuTQfJa6zWB81Ib/view?usp=sharing
