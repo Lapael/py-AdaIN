@@ -1,4 +1,4 @@
-# py-AdaIN
+![training_loss](https://github.com/user-attachments/assets/4c517880-2aca-4e19-b981-41e7c2cdd08b)# py-AdaIN
 AdaIN은 Style Transfer의 일종으로 콘텐츠 이미지를 스타일 이미지의 스타일로 재구성하는 기술이다.
 <br />(Arbitrary Style Transfer in Real-time with Adaptive Instance Normalization)
 <br />
@@ -25,6 +25,19 @@ $$\textrm{AdaIN}(x,y)=\sigma (y)(\frac{x-\mu(x)}{\sigma(x)})+\mu(y)$$
 <br />출력값은 콘텐츠 특징의 평균($\mu$)과 분산($\sigma ^2$)을 스타일 특징의 평균과 분산으로 조정한다.
 <br />$\left ( \frac{x-\mu(x)}{\sigma(x)} \right )$ 는 콘텐츠 이미지에서 콘텐츠 이미지의 스타일을 빼준 것이고,
 <br />$\sigma (y)(\frac{x-\mu(x)}{\sigma(x)})+\mu(y)$ 는 이에 스타일 이미지의 스타일을 입혀준 것이다.
+<br />
+<br />다음으로 Decoder은 feature map 형태를 이미지로 되돌려주는 기능을 한다.
+<br />이를 위해 Decoder의 Layer 구조는 Encoder와 대칭을 이루게 하여 원본에 가깝게 보여지도록 설정한다.
+<br />Decoder은 Encoder과 다르게 사전 학습 모델을 사용하지 않기 떄문에 학습이 필요하다.
+<br />이 과정에서 Decoder가 만든 이미지를 다시 Encoder을 이용해 feature map으로 바꾼 뒤,
+<br />Loss를 계산해 이 Loss가 적어지도록 Decoder을 학습시킨다.
+<br />
+<br />
+<br />
 
+![training_loss](https://github.com/user-attachments/assets/f314c78c-47aa-4d4a-a396-04b95e4c83fa)
 
+<br />이는 내가 직접 local에서 Decoder을 학습시킨 결과이다.
+<br />이 때 설정한 파라미터는 다음과 같다. :
+<br />`--epoch 50`
 https://drive.google.com/file/d/1TAk9eLtbAq0AFuak8GuTQfJa6zWB81Ib/view?usp=sharing
