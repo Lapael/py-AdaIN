@@ -70,42 +70,33 @@ class Decoder(nn.Module):
 
         # Decoder는 Encoder와 대칭적으로 구성
         self.decoder = nn.Sequential(
-            # ReLU4_1 -> ReLU3_4
             nn.Conv2d(512, 256, kernel_size=3, padding=1),
             nn.ReLU(),
             nn.Upsample(scale_factor=2, mode='nearest'),
 
-            # ReLU3_4 -> ReLU3_3
             nn.Conv2d(256, 256, kernel_size=3, padding=1),
             nn.ReLU(),
 
-            # ReLU3_3 -> ReLU3_2
             nn.Conv2d(256, 256, kernel_size=3, padding=1),
             nn.ReLU(),
 
-            # ReLU3_2 -> ReLU3_1
             nn.Conv2d(256, 256, kernel_size=3, padding=1),
             nn.ReLU(),
 
-            # ReLU3_1 -> ReLU2_2
             nn.Conv2d(256, 128, kernel_size=3, padding=1),
             nn.ReLU(),
             nn.Upsample(scale_factor=2, mode='nearest'),
 
-            # ReLU2_2 -> ReLU2_1
             nn.Conv2d(128, 128, kernel_size=3, padding=1),
             nn.ReLU(),
 
-            # ReLU2_1 -> ReLU1_2
             nn.Conv2d(128, 64, kernel_size=3, padding=1),
             nn.ReLU(),
             nn.Upsample(scale_factor=2, mode='nearest'),
 
-            # ReLU1_2 -> ReLU1_1
             nn.Conv2d(64, 64, kernel_size=3, padding=1),
             nn.ReLU(),
-
-            # 최종
+            
             nn.Conv2d(64, 3, kernel_size=3, padding=1),
         )
 
@@ -229,7 +220,6 @@ def train_model():
 
         print(f'Epoch [{epoch + 1}/{num_epochs}], Average Loss: {avg_loss:.4f}')
 
-        # 체크포인트 저장 epoch 10마다
         if (epoch + 1) % 10 == 0:
             torch.save({
                 'epoch': epoch + 1,
